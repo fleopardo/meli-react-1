@@ -1,9 +1,11 @@
+const path = require('path');
+
 module.exports = {
     // JavaScript entry point
-    entry: './App.js',
+    entry: path.resolve('./App.js'),
     // JavaScrip bundle file
     output: {
-      path: './bundle',
+      path: path.resolve('./bundle'),
       filename: 'index.js'
     },
     // Setup server
@@ -13,7 +15,7 @@ module.exports = {
     },
     module: {
       // JS, JSX and SASS loaders
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
           exclude: /node_modules/,
