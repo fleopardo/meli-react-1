@@ -1,12 +1,14 @@
 const path = require('path');
+const BUILD_DIR = path.resolve(__dirname, './app/build');
+const APP_DIR = path.resolve(__dirname, './app');
 
 module.exports = {
     // JavaScript entry point
-    entry: path.resolve('./App.js'),
+    entry: `${APP_DIR}/app.js`,
     // JavaScrip bundle file
     output: {
-      path: path.resolve('./bundle'),
-      filename: 'index.js'
+      path: BUILD_DIR,
+      filename: 'bundle.js'
     },
     // Setup server
     devServer: {
@@ -19,7 +21,8 @@ module.exports = {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: 'babel',
+          include: APP_DIR,
+          loader: 'babel-loader',
           query: {
             presets: ['es2015', 'react']
           }
