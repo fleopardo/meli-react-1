@@ -3,12 +3,14 @@ const BUILD_DIR = path.resolve(__dirname, './app/build');
 const APP_DIR = path.resolve(__dirname, './app');
 
 module.exports = {
+    mode: 'development',
     // JavaScript entry point
     entry: `${APP_DIR}/app.js`,
     // JavaScrip bundle file
     output: {
       path: BUILD_DIR,
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      publicPath: '/'
     },
     // Setup server
     devServer: {
