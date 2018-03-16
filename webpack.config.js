@@ -13,7 +13,11 @@ module.exports = {
     // Setup server
     devServer: {
       inline: true,
-      port: 3000
+      port: 3000,
+      historyApiFallback: true,
+    },
+    resolve: {
+      extensions: ['.js', '.jsx', '.json'],
     },
     module: {
       // JS, JSX and SASS loaders
@@ -21,7 +25,7 @@ module.exports = {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          include: APP_DIR,
+          // include: APP_DIR,
           loader: 'babel-loader',
           query: {
             presets: ['es2015', 'react']
