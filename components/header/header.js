@@ -20,6 +20,7 @@ class Header extends React.Component {
                     <h1>Logo</h1>
                 </Link>
 
+                
                 <input type="text" value={this.state.nombre} />
 
                 <hr />

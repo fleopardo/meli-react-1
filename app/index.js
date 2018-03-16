@@ -4,14 +4,14 @@ import Home from '../pages/home/home';
 import Search from '../pages/search/search';
 import Item from '../pages/item/item';
 import NotFound from '../pages/not-found/not-found';
-import Header from '../pages/header/header';
+import Header from '../components/header/header';
 
 const Index = () => (
-    <div className="">
+    <div className="myApp">
         <Header />
         <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/search' component={Search} />
+            <Route path='/search' component={Search} />
             <Route exact path='/item' component={Item} />
             <Route exact component={NotFound} />
         </Switch>
@@ -19,3 +19,5 @@ const Index = () => (
 )
 
 export default Index;
+
+
