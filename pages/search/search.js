@@ -12,13 +12,13 @@ class Search extends React.Component {
         // TODO: Pegarle a la API desde acá. Leer Axios.
         const result = [
             {
-                name: "nombre1",
+                name: query + "1",
             },
             {
-                name: "nombre2",
+                name: query + "2",
             },
             {
-                name: "nombre3",
+                name: query + "3",
             }
         ];
         this.setState({
@@ -28,8 +28,8 @@ class Search extends React.Component {
     render() {
         if (!this.state.result) return null;
 
-        const items = this.state.result.map((item) =>
-            <div>
+        const items = this.state.result.map((item, index) =>
+            <div key={index}>
                 <h1>{item.name}</h1>
             </div>
         );

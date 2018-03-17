@@ -11,12 +11,6 @@ module.exports = {
       path: BUILD_DIR,
       filename: 'bundle.js',
     },
-    // Setup server
-    devServer: {
-      inline: true,
-      port: 3000,
-      historyApiFallback: true,
-    },
     resolve: {
       extensions: ['.js', '.jsx', '.json'],
     },
