@@ -7,6 +7,8 @@ class Search extends React.Component {
         this.state = {};
     }
     componentDidMount() {
+        const query = this.props.match.params.query;
+        alert("Ey, estás buscando '" + query + "' ,ahora deberías llamar a la API y traerte los resultados de la query");
         // TODO: Pegarle a la API desde acá. Leer Axios.
         const result = [
             {
@@ -24,7 +26,6 @@ class Search extends React.Component {
         })
     }
     render() {
-        console.log(this.props.match.query);
         if (!this.state.result) return null;
 
         const items = this.state.result.map((item) =>

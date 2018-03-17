@@ -10,7 +10,6 @@ module.exports = {
     output: {
       path: BUILD_DIR,
       filename: 'bundle.js',
-      publicPath: '/'
     },
     // Setup server
     devServer: {
