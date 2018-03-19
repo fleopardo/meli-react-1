@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/fleopardo/meli-react-1#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "4.16.3",
     "nodemon": "1.17.2",
     "react": "15.5.4",
