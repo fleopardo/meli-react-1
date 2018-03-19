@@ -6,14 +6,23 @@ import {Link} from 'react-router-dom';
 class Header extends React.Component {
     constructor (props) {
         super(props);
-        this.state = { nombre: 'lucas'}
+        this.state = { 
+            value: 'Busca lo que quieras'
+        }
     }
     
-    // onChange() {
-    //     this.setState ({
+    onChange(event) {
+        this.setState ({
+            value: event.target.value
+        })
+    }
 
-    //     })
-    // }
+    onFocus(event) {
+        this.setState({
+            value: ''
+        })
+    }
+
     render () {
         return (
             <div className="header">
@@ -21,23 +30,15 @@ class Header extends React.Component {
                     <h1>Logo</h1>
                 </Link>
 
-                
-                <input type="text" value={this.state.nombre} />
+                <input type="text" 
+                        value={this.state.value}
+                        onChange={this.onChange.bind(this)}
+                        onFocus={this.onFocus.bind(this)} />
 
                 <hr />
             </div>
         )
     }
 }
-
-// const Header = () => (
-//     <div>
-//     <Link to="/">
-//         <h1>Logo</h1>
-//     </Link>
-
-//     <input type="text" value={this.state.nombre} />
-//     </div>
-// )
 
 export default Header;
